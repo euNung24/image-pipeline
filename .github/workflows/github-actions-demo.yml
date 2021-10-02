@@ -1,0 +1,10 @@
+name: Test
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+    - name: npm install, start, and test
+      run: npm ci && npm run start && npm test
