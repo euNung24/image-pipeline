@@ -8,3 +8,7 @@ jobs:
     - uses: actions/setup-node@v1
     - name: npm install, start, and test
       run: npm ci && npm run start && npm test
+    - name: Commit changes
+      uses: EndBug/add-and-commit@v7
+      with:
+        message: 'screenshot is changed'
