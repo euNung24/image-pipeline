@@ -6,11 +6,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
-    - name: Run the containerized tests
-      run: npm run test
-    - name: Archive visual regression failures
-      uses: actions/upload-artifact@v1
-      if: failure()
+    - name: Run test
+      uses: tj-actions/puppeteer@v3.2
       with:
-        name: visual-regression-report
-        path: /home/runner/work/visual-regression-jest/visual-regression-jest/src/__image_snapshots__/__diff_output__
+        args: yarn test
